@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="default" extends="struts-default">
+
+		<global-results>
+			<result name="error">/error.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
+		</global-exception-mappings>
+
+		<!--  <action name="signup" class="com.action.SignUpAction">
+			<result name="success">login.jsp</result>
+			<result name="error">signup.jsp</result>
+		</action>-->
+		
+		<action name="signup" class="com.action.SignUpAction">
+			<result name="success">login.jsp</result>
+			<result name="error">signup.jsp</result>
+		</action>
+		
+
+		<action name="login" class="com.action.UserAction">
+			<result name="success">/dashboard.jsp</result>
+		</action>
+
+		<action name="login" class="com.action.LoginAction">
+			<result name="success">dashboard.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+
+
+
+		<action name="readAccount" class="com.action.ReadAccountAction">
+			<result name="success">readAccount.jsp</result>
+		</action>
+
+		<action name="deleteAccount"
+			class="com.action.DeleteAccountAction">
+			<result name="success">dashboard.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<action name="account" class="com.action.AccountAction">
+			<result name="success">dashboard.jsp</result>
+			<result name="input">accountForm.jsp</result>
+		</action>
+		
+		
+		<action name="deleteAccount"
+			class="com.action.DeleteAccountAction">
+			<result name="success">dashboard.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+		
+
+		<action name="searchAction" class="com.action.SearchAction">
+			<result name="success">payment.jsp</result>
+		</action>
+		
+		<action name="pay" class="com.action.StoreAmountAction">
+			<result name="success">upi.jsp</result>
+		</action>
+
+		<action name="validateUpiPinAction" class="com.action.UpiAction">
+			<result name="success">paymentSuccessfull.jsp</result>
+			<result name="error">upi.jsp</result>
+		</action>
+		
+		<action name="printHistory" class="com.action.HistoryAction">
+			<result name="success">history.jsp</result>
+		</action>
+		
+		<action name="forgetlogin" class="com.action.ForgetPasswordLogin">
+			<result name="success">userDetails.jsp</result>
+		</action>
+		
+		
+		
+		<!-- action for history -->
+	<!-- 	<action name="searchAction" class="com.action.HistoryAction">
+            <result>/payment.jsp</result>
+        </action>
+        <action name="payment" class="com.action.HistoryAction">
+            <result>/upi.jsp</result>
+        </action>
+        <action name="validateUpiPinAction" class="com.action.HistoryAction">
+            <result>/paymentSuccess.jsp</result>
+        </action>-->
+		
+		
+		
+		
+
+	</package>
+
+</struts>
